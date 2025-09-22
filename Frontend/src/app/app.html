@@ -1,0 +1,78 @@
+<section class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen font-inter">
+  <p-toast position="top-right"></p-toast>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header Section -->
+    <header class="mb-10 w-full flex flex-col justify-center items-center">
+      <h1 class="text-4xl font-bold text-slate-900 mb-1">Automated Notes Collector</h1>
+      <p class="text-base text-slate-600">AI-powered lecture summaries and document insights</p>
+    </header>
+
+    <!-- Main Content: Lecture Summaries -->
+    <section>
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-semibold text-slate-800">Recent Lecture Summaries</h2>
+      </div>
+
+      <!-- Summaries Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- Individual Summary Card Container -->
+        @for (lectureSummary of summaries; track lectureSummary.webViewLink) {
+        <p-card>
+          <div class="bg-white rounded-xl space-y-4">
+            <div class="space-y-1">
+              <h2 class="text-lg font-semibold text-slate-800">{{ lectureSummary.fileName }}</h2>
+              <div class="flex items-center gap-5 text-sm text-gray-400">
+                <span class="flex items-center">
+                  <i class="pi pi-file-pdf mr-1"></i> {{ lectureSummary.fileNumberOfPages }} Pages
+                </span>
+                <span class="flex items-center capitalize">
+                  <i class="pi pi-user mr-1"></i> Uploaded by: {{ lectureSummary.modifyingUser }}
+                </span>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-200 pb-4">
+              <span class="block mb-2 text-gray-400 text-sm mt-4">AI Summary:</span>
+              <p class="text-gray-700 text-sm">{{ lectureSummary.lectureSummary }}</p>
+            </div>
+
+            <div class="flex justify-center items-center">
+              <a
+                class="px-3 py-2 border border-slate-500 rounded-xl cursor-pointer text-slate-950 font-semibold bg-slate-50"
+                [href]="lectureSummary.webViewLink"
+                target="_blank"
+              >
+                View Original
+              </a>
+            </div>
+          </div>
+        </p-card>
+        }
+        <!-- Empty State Card -->
+        <article
+          class="empty-state-container bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden"
+        >
+          <div class="empty-state p-8 text-center">
+            <div class="empty-icon mb-4">
+              <div
+                class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto"
+              >
+                <span class="text-2xl">📚</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-medium text-slate-900 mb-2">Waiting for new summaries...</h3>
+            <p class="text-slate-500 mb-4">
+              Upload a document or trigger your n8n workflow to see AI-generated summaries appear
+              here in real-time.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Loading State (Container for PrimeNG ProgressBar/Skeleton) -->
+    <section class="loading-container hidden">
+      <!-- PrimeNG ProgressBar or Skeleton components -->
+    </section>
+  </div>
+</section>

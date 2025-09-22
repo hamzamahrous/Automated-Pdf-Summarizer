@@ -1,0 +1,13 @@
+@if (show) {
+<div [class]="containerClasses">
+  <!-- Circular Spinner -->
+  <div [class]="spinnerClasses" [ngStyle]="spinnerStyle">
+    <div class="spinner-circle"></div>
+  </div>
+
+  <!-- Optional text -->
+  @if (text) {
+  <div class="spinner-text" [style.color]="color">{{ text }}</div>
+  }
+</div>
+}

@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@theme {
+  --container-center: true;
+  --container-padding: 1rem;
+  --container-padding-sm: 2rem;
+  --container-padding-lg: 3rem;
+  --container-padding-xl: 4rem;
+
+  --font-cairo: 'Cairo', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-jersey: 'Jersey', sans-serif;
+  --font-opensans: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
