@@ -7,7 +7,12 @@ The frontend is built with PrimeNG components for a clean and interactive UI, in
 
 Key features:
 
-Automation with n8n: Listens for file uploads on Google Drive and triggers the workflow automatically.
-AI Summarization: Extracts and summarizes lecture content.
-Real-time Updates: Uses WebSockets to stream new summaries instantly to the frontend.
-Modern UI: Built with Angular + PrimeNG for polished and user-friendly presentation.
+- Automation with n8n: Listens for file uploads on Google Drive and triggers the workflow automatically.
+- AI Summarization: Extracts and summarizes lecture content.
+- Real-time Updates: Uses WebSockets to stream new summaries instantly to the frontend.
+- Modern UI: Built with Angular + PrimeNG for polished and user-friendly presentation.
+
+
+Workflow:
+<img width="1251" height="692" alt="image" src="https://github.com/user-attachments/assets/f50bc27a-5d6c-45f6-9cf9-f5f93f2874a3" />
+
